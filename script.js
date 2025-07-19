@@ -123,7 +123,9 @@ async function allowance() {
 function setValueTokenToSpend() {
 	amount0 = document.getElementsByClassName("IHAVE")[0].value;
 	amount1 = BigInt(amount0) * BigInt(priceGold); // Convertir a la cantidad de oro
-	document.getElementsByClassName("IWANT")[0].value=amount1;
+  const price = Web3.utils.fromWei(amount1, 'ether');
+  const formattedPrice = parseInt(price);
+	document.getElementsByClassName("IWANT")[0].value=formattedPrice;
 }
 
 function showToast(address, color) {

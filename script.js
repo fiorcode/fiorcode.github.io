@@ -122,8 +122,7 @@ async function allowance() {
 
 function setValueTokenToSpend() {
 	amount0 = document.getElementsByClassName("IHAVE")[0].value;
-	amount0 = amount0 / 1;
-	amount1 = amount0/P1 ;
+	amount1 = amount0 * priceGold / 1e18; // Convertir a la cantidad de oro
 	document.getElementsByClassName("IWANT")[0].value=amount1;
 }
 

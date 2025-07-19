@@ -17,7 +17,7 @@ async function init() {
     // leer precio P1
     web3 = new Web3(window.ethereum);
     swapInstance = new web3.eth.Contract(exchange_abi, exchange_address);
-    updatePrice();
+    priceGold = await swapInstance.methods.getPrice(silver_address, gold_address).call();
     // Convert from fixed-point (1e18) to human-readable string
     const price = Web3.utils.fromWei(priceGold, 'ether');
 

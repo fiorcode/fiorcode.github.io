@@ -1,4 +1,3 @@
-import { ethers } from "ethers";
 
 var buyOrApprove = 0;
 var web3;

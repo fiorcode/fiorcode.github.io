@@ -266,13 +266,21 @@ button {
   box-shadow: 1px 2px 2px grey;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   cursor: pointer;
   z-index: 1000;
+  font-size: 16px;
 }
 
 #free-silver-btn:hover {
   background-color: #2fecfb;
+}
+
+#free-silver-btn .silver-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 

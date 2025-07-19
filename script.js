@@ -1,10 +1,8 @@
 var buyOrApprove = 0;
-
 var web3;
-
 var address="Conectar";
 var swapInstance;
-
+var priceGold = 0;
 
 init();
 var isConnected = obtenerValorDeLocalStorage("SwapConected");
@@ -18,18 +16,21 @@ async function init() {
     // leer precio P1
     web3 = new Web3(window.ethereum);
     swapInstance = new web3.eth.Contract(exchange_abi, exchange_address);
-    P0 = await swapInstance.methods.getPrice(silver_address, gold_address).call();
-    P1 = Number(P0);
-    P0 = P1;
-    document.getElementById("swap-price").innerHTML = P0;
-    //alert(P0)
+    updatePrice();
+    // Convert from fixed-point (1e18) to human-readable string
+    const price = ethers.utils.formatUnits(priceGold, 18);
+
+    // Optional: round or truncate to desired decimals
+    const formattedPrice = parseFloat(price).toFixed(5);
+    document.getElementById("swap-price").innerHTML = formattedPrice;
 }
 
+async function updatePrice() {
+  priceGold = await swapInstance.methods.getPrice(silver_address, gold_address).call();
+}
 
 async function connect()
 {
-    //alert("conectar. Obtener address metamask");
-    //address = "0x98402384209348209348230948230942";
     await window.ethereum.request({"method": "eth_requestAccounts", "params": []});
     const account = await web3.eth.getAccounts();
 
@@ -49,7 +50,6 @@ async function connect()
 
 
 async function handleSubmit() {
-    // acá la aprobacion y compra.
     const AmountToBuy = document.querySelector("#form > input.IHAVE").value;
 
     if(buyOrApprove!=0) {

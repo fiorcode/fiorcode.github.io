@@ -262,15 +262,17 @@ button {
   font-weight: bold;
   border: none;
   border-radius: 24px;
-  padding: 0 20px;
+  padding: 0 16px;
   box-shadow: 1px 2px 2px grey;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  white-space: nowrap;
   cursor: pointer;
   z-index: 1000;
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1;
 }
 
 #free-silver-btn:hover {
@@ -278,9 +280,9 @@ button {
 }
 
 #free-silver-btn .silver-icon {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
+  width: 22px;
+  height: 22px;
+  display: inline-block;
 }
 
 

@@ -122,16 +122,15 @@ async function allowance() {
 
 function setValueTokenToSpend() {
 	amount0 = document.getElementsByClassName("IHAVE")[0].value;
-	amount1 = amount0 * priceGold / 1e18; // Convertir a la cantidad de oro
+	amount1 = Number(amount0) * priceGold; // Convertir a la cantidad de oro
 	document.getElementsByClassName("IWANT")[0].value=amount1;
 }
 
 function showToast(address, color) {
 	var toast = document.getElementById("toast");
-	var addressLines = address.match(/.{1,20}/g); // Dividir la dirección en grupos de 6 caracteres
+	var addressLines = address.match(/.{1,20}/g); 
   
-	toast.innerHTML = ""; // Limpiar el contenido del toast
-  
+	toast.innerHTML = ""; 
 	addressLines.forEach(function(line) {
 	  var lineElement = document.createElement("div");
 	  lineElement.textContent = line;

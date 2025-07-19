@@ -1,4 +1,4 @@
-import { ethers } from "ethers";
+
 var buyOrApprove = 0;
 var web3;
 var address="Conectar";
@@ -19,7 +19,7 @@ async function init() {
     swapInstance = new web3.eth.Contract(exchange_abi, exchange_address);
     updatePrice();
     // Convert from fixed-point (1e18) to human-readable string
-    const price = new ethers.utils.formatUnits(priceGold, 18);
+    const price = Web3.utils.fromWei(rawPrice, 'ether');
 
     // Optional: round or truncate to desired decimals
     const formattedPrice = parseFloat(price).toFixed(5);

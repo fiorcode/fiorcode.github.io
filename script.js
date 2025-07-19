@@ -56,7 +56,7 @@ async function handleSubmit() {
       swapInstance.methods.swapExactTokensForTokens(
         Number(AmountToBuy), 
         Number(AmountToBuy)/2,
-        [silver_address, gold_address],
+        [gold_address, silver_address],
         address,
         9999999999999999999
       ).send({from: address})

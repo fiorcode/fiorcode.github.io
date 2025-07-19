@@ -1,8 +1,3 @@
-var amount0=0;
-var amount1=1;
-var P0=0.1;// precio
-var P1=10;// Precio de BNB
-
 var buyOrApprove = 0;
 
 var web3;
@@ -114,7 +109,7 @@ async function setBalanceSilver() {
 }
 
 async function allowance() {
-  goldInstance = new web3.eth.Contract(gold_abi, gold_address);
+  silverInstance = new web3.eth.Contract(silver_abi, silver_address);
   const allowed = await goldInstance.methods.allowance(address,exchange_address).call();
   buyOrApprove = allowed;
 }

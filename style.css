@@ -256,13 +256,14 @@ button {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  height: 52px;
+  height: auto;
+  min-height: 52px;
   background-color: #1fc7d4;
   color: white;
   font-weight: bold;
   border: none;
   border-radius: 24px;
-  padding: 0 16px;
+  padding: 12px 20px;
   box-shadow: 1px 2px 2px grey;
   display: inline-flex;
   align-items: center;
@@ -271,8 +272,10 @@ button {
   white-space: nowrap;
   cursor: pointer;
   z-index: 1000;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1;
+  max-width: 512px;
+  overflow: hidden;
 }
 
 #free-silver-btn:hover {
@@ -282,6 +285,7 @@ button {
 #free-silver-btn .silver-icon {
   width: 22px;
   height: 22px;
+  object-fit: contain;
   display: inline-block;
 }
 

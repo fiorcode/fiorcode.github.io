@@ -78,8 +78,8 @@ async function handleSubmit() {
               await setBalanceSilver();
           })      
     } else {
-      usdtInstance = new web3.eth.Contract(usdt_abi, usdt_address);
-      usdtInstance.methods.approve(exchange_address,AmountToBuy).send({from: address})
+      silverInstance = new web3.eth.Contract(silver_abi, silver_address);
+      silverInstance.methods.approve(exchange_address,AmountToBuy).send({from: address})
           .on('transactionHash', function(hash){
               showToast("transactionHash: "+hash, "orange");
           })

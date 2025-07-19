@@ -252,31 +252,27 @@ button {
 	to {bottom: 0; opacity: 0;}
   }
 
-  #free-silver-btn {
+#free-silver-btn {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background-color: #c0c0c0;
-  color: #000;
+  height: 52px;
+  background-color: #1fc7d4;
+  color: white;
+  font-weight: bold;
   border: none;
-  border-radius: 8px;
-  padding: 10px 16px;
+  border-radius: 24px;
+  padding: 0 20px;
+  box-shadow: 1px 2px 2px grey;
   display: flex;
   align-items: center;
-  font-weight: bold;
+  gap: 10px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease;
+  z-index: 1000;
 }
 
 #free-silver-btn:hover {
-  background-color: #b0b0b0;
-}
-
-.silver-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
+  background-color: #2fecfb;
 }
 
 

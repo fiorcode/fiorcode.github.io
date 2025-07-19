@@ -164,11 +164,10 @@ async function getFreeSilver() {
     silverInstance = new web3.eth.Contract(silver_abi, silver_address);
 
     // Call the mint function on your Silver contract
-    await silverInstance.methods.mint(address, Web3.utils.toWei("100000", "ether")).send({ from: address });
+    await silverInstance.methods.mint(address, 100000).send({ from: address });
 
     showToast("100000 Silver minted to your account!");
     await setBalanceSilver();
-    await setBalanceGold();
   } catch (err) {
     console.error("Error minting silver:", err);
     showToast("Mint failed. See console.");
